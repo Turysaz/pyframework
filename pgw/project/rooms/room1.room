@@ -1,0 +1,17 @@
+[size]
+width: 800
+height: 600
+
+; scrolling options
+;   "n" - none
+;   "h" - horizontal
+;   "v" - vertical
+;   "b" - both
+scrolling: "n"
+
+[background]
+#picture: "bg_room1_test.png"
+color: (100,6,100)
+
+[objects]
+obj_player: (1,2), (2,3)
