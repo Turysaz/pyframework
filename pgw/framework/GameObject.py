@@ -7,11 +7,16 @@ class GameObject():
         self.__initialize_object(event_aggregator, room)
 
     def __initialize_object(self, event_aggregator, room):
+        self.event_aggregator = event_aggregator
+        self.room = room
+
         self.visible = True
         self.sprite = None
         self.layer = 1
 
         self.position = (0,0)
+
+        self.ui_element = False
 
         self.collision = False
         self.friction = 0
@@ -22,8 +27,6 @@ class GameObject():
         self.__direction = (1,0)
         self.direction = property(__get_direction, __set_direction)
 
-        self.room = room
-        self.event_aggregator = event_aggregator
 
     # overridable
     def step(delta):
@@ -36,14 +39,17 @@ class GameObject():
 
     def get_collisions():
         # return object list
+        # TODO
         pass
 
     def off_screen():
         # return true/false
+        # TODO
         pass
 
     def off_room():
         # return true/false
+        # TODO
         pass
 
     # framework
@@ -51,6 +57,10 @@ class GameObject():
         if self.fixed: return
         delta *= 1000 # measurement in seconds
         x = self.position[0] + (self.direction * self.speed * delta)
+
+    def request_camera_focus(self, camera=None):
+        # TODO
+        pass
 
 
     # getter / setter

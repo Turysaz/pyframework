@@ -30,9 +30,9 @@ class Room():
             obj = self.del_queue.get()
             self.objects.remove(obj)
 
-        while not self.del_queue.empty():
-            obj = self.del_queue.get()
-            self.objects.remove(obj)
+        while not self.add_queue.empty():
+            obj = self.add_queue.get()
+            self.objects.add(obj)
 
     def pre_step(self):
         pass

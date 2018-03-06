@@ -29,7 +29,8 @@ class MainControl():
             events = pygame.event.get()
 
             for e in events:
-                if e.type == pygame.QUIT: running = False
+                if e.type == pygame.QUIT:
+                    running = False
                 self.event_aggregator.publish(e.type, e)
 
             self.current_room.step(delta)

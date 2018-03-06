@@ -9,5 +9,5 @@ class ObjectFactory():
     def register_class(self, class_name_str, class_name):
         self.registered_classes.update({class_name_str : class_name})
 
-    def create_object(self, room, obj_name):
+    def create_object(self, room, obj_name_string):
         o = self.registered_classes[obj_name](room, self.event_aggregator)
