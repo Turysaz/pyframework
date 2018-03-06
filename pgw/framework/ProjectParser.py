@@ -7,7 +7,10 @@ from Room import Room
 
 class ProjectParser():
 
-    def __init__(self, event_aggregator, object_factory):
+    def __init__(self,
+            event_aggregator,
+            object_factory,
+            sound_provider):
 
         self.event_aggregator = event_aggregator
         self.object_factory = object_factory

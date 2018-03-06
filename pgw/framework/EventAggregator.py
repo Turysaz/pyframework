@@ -12,7 +12,7 @@ class EventAggregator():
         if eventtype in self.subscriptions:
             self.subscriptions[eventtype].add((recipient, handler))
         else:
-            self.subscriptions.[eventtype] = {(recipient, handler)}
+            self.subscriptions[eventtype] = {(recipient, handler)}
 
 
     def unsubscribe(self, eventtype, recipient, handler):

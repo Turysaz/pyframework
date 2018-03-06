@@ -3,12 +3,14 @@ import math
 
 class GameObject():
 
-    def __init__(self, event_aggregator, room):
-        self.__initialize_object(event_aggregator, room)
+    def __init__(self, framework_package):
+        self.__initialize_object(framework_package, room)
 
-    def __initialize_object(self, event_aggregator, room):
-        self.event_aggregator = event_aggregator
-        self.room = room
+    def __initialize_object(self, package):
+        # unwrap package
+        self.event_aggregator = package.event_aggregator
+        self.sound_provider = package.sound_provider
+        self.room = package.room
 
         self.visible = True
         self.sprite = None
@@ -50,6 +52,11 @@ class GameObject():
     def off_room():
         # return true/false
         # TODO
+        pass
+
+
+    def play_sound():
+        #TODO
         pass
 
     # framework
