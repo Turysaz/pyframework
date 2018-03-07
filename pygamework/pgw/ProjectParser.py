@@ -1,8 +1,8 @@
 
 import os
-import ConfigOptionDefinitions
+import pgw.ConfigOptionDefinitions
 from configparser import ConfigParser
-from Room import Room
+from .Room import Room
 
 
 class ProjectParser():
@@ -45,7 +45,7 @@ class ProjectParser():
             conf = ConfigParser()
             conf.read(room_base_path + rd)
 
-            for option in ConfigOptionDefinitions.room_options:
+            for option in pgw.ConfigOptionDefinitions.room_options:
                 option.conditional_apply_to(conf, room)
 
             if conf.has_section("objects"):

@@ -1,3 +1,5 @@
 thirdparty
 __pycache__
-pgw/lib
+pygamework/lib
+pygamework/python
+pygamework/pygame

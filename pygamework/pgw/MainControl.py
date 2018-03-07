@@ -1,6 +1,6 @@
 
 import pygame
-from Room import Room
+from .Room import Room
 
 class MainControl():
 
