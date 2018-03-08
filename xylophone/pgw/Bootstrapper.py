@@ -1,4 +1,5 @@
 
+import pygame
 
 from .ConfigurationService import create_configuration_parser
 from .EventAggregator import EventAggregator
@@ -24,5 +25,6 @@ class Bootstrapper():
         self.ioc.register_singleton("sp", SoundProvider)
 
     def bootstrap(self):
+        pygame.init()
         ctrl = self.ioc.get_instance("ctrl")
         ctrl.run_game()

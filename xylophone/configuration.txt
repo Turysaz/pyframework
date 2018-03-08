@@ -2,6 +2,6 @@
 fps: 60
 
 [window]
-title: pyGAMEWORK
+title: xylophone
 res_x: 800
 res_y: 600

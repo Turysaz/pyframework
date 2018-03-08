@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./python/python start.py
+./python/python launcher.py
