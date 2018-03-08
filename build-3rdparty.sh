@@ -1,8 +1,8 @@
 #!/bin/bash
 
 rootdir=$(pwd)
-pybindir=$rootdir/pygamework/python
-pygamedir=$rootdir/pygamework/pygame
+pybindir=$rootdir/xylophone/python
+pygamedir=$rootdir/xylophone/pygame
 
 cd thirdparty
 
