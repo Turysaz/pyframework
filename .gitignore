@@ -1,4 +1,8 @@
-thirdparty
+
+# temporary
+thirdparty/cpython
+
+# compiled / binaries
 __pycache__
 xylophone/lib
 xylophone/python

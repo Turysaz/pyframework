@@ -1,0 +1,3 @@
+[submodule "thirdparty/pygame"]
+	path = thirdparty/pygame
+	url = https://github.com/pygame/pygame.git

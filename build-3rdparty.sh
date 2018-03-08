@@ -1,37 +1,58 @@
 #!/bin/bash
 
-rootdir=$(pwd)
-pybindir=$rootdir/xylophone/python
-pygamedir=$rootdir/xylophone/pygame
+# general
+root_directory=$(pwd)
+project_directory=$root_directory/xylophone
+sources_directory=$root_directory/thirdparty
 
-cd thirdparty
+# python
+python_source=$sources_directory/cpython
+python_target=$project_directory/python
 
+# pygame
+pygame_source=$sources_directory/pygame
+pygame_target=$project_directory/pygame
+
+#==============================
+echo "cleaning"
+
+if [ -d $pygame_target ]; then
+    rm -rf $pygame_target
+fi
+
+if [ -d $python_target ]; then
+    rm -rf $python_target
+fi
+
+#===============================
+echo "============"
 echo "Build python"
 echo "============"
-sleep 1
 
-cd cpython
+cd $python_source
 ./configure --enable-optimization
 make
-cp python $pybindir/
-cp pybuilddir.txt $pybindir/
-cp libpython* $pybindir/
-cp -r Modules $pybindir/
-cp -r Lib $pybindir/
-cp -r build $pybindir/
 
-cd ..
+# ------------------
+mkdir $python_target
+python_files=(python pybuilddir.txt libpython* Modules Lib build)
 
-echo "done."
-echo 
+for f in "${python_files[@]}"; do
+    cp -r $f $python_target
+done
+
+#===============================
+echo "============"
 echo "Build pygame"
 echo "============"
 sleep 1
 
-cd pygame
+cd $pygame_source
 python setup.py build
+
+# ------------------
+mkdir $pygame_target
 cd build/lib.linux*
-cp -r pygame $pygamedir
+cp -r pygame/* $pygame_target
 
 cd $rootdir
-
