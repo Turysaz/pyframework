@@ -14,9 +14,9 @@ PYTHON_BIN	= python pybuilddir.txt libpython3.6m.a Modules Lib build
 PYBIN_TRG	= $(PYTHON_BIN:%=$(PYTHON_TRG_DIR)/%)
 PYBIN_SRC	= $(PYTHON_BIN:%=$(PYTHON_SRC_DIR)/%)
 
-PYGAME_BIN	= a file
-PGBIN_TRG	= $(PYGAME_BIN:%=$(PYTHON_TRG_DIR)/%)
-PGBIN_SRC	= $(PYGAME_BIN:%=$(PYGAME_SRC_DIR)/%)
+PYGAME_BIN  = lib.linux-x86_64-3.6
+PGBIN_TRG	= $(PYGAME_TRG_DIR)
+PGBIN_SRC	= $(PYGAME_SRC_DIR)/build/$(PYGAME_BIN)/pygame
 
 
 all: thirdparty
@@ -35,17 +35,13 @@ $(PYTHON_TRG_DIR)/%: $(PYTHON_SRC_DIR)/%
 $(PYBIN_SRC):
 	cd $(PYTHON_SRC_DIR); bash configure --enable-optimization; make
 
-pygame-module: $(PYGAME_TRG_DIR) #$(PGBIN_TRG)
+pygame-module: $(PGBIN_TRG)
 
-$(PYGAME_TRG_DIR):
-	mkdir $(PYGAME_TRG_DIR)
-
-$(PYGAME_TRG_DIR)/%: $(PYGAME_SRC_DIR)/%
-	cp -r $< $@
+$(PGBIN_TRG): $(PGBIN_SRC)
+	cp -r $(PGBIN_SRC) $(PGBIN_TRG)
 
 $(PGBIN_SRC):
-	cd $(PYGAME_SRC_DIR)
-	python setup.py build
+	cd $(PYGAME_SRC_DIR); python setup.py build
 
 test:
 	python -m unittest -v
