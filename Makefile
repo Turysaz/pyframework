@@ -33,9 +33,7 @@ $(PYTHON_TRG_DIR)/%: $(PYTHON_SRC_DIR)/%
 	cp -r $< $@
 
 $(PYBIN_SRC):
-	cd $(PYTHON_SRC_DIR)
-	./configure --enable-optimization
-	make
+	cd $(PYTHON_SRC_DIR); bash configure --enable-optimization; make
 
 pygame-module: $(PYGAME_TRG_DIR) #$(PGBIN_TRG)
 
