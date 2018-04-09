@@ -12,6 +12,9 @@ variants.
 
 ### DEV VERSION (concept 1)
 
+**IMPORTANT NOTE:**
+**THIS CONCEPT IS OBSOLOTE. TAKE CONCEPT 2 INSTEAD**
+
 Seperate framework code from project code, avoid redundancy of framework code and libraries / executables.
 
 The path to the executable is stored in the `configuration.txt`.
@@ -48,7 +51,7 @@ The path to the executable is stored in the `configuration.txt`.
         ./some-other-project/
             ...
 
-### DEV VERSION (concept 2)
+### DEV VERSION (concept 2) (chosen concept)
 
 The framework contains everything from the python executable to the actual project code.
 
@@ -78,15 +81,32 @@ The framework contains everything from the python executable to the actual proje
 
         ./configuration.txt
 
+        ./LICENSE_PGW   #license info for pgw itself
+        ./LICENSE_PRJ   #license information for the actual project
+
 
 ### GAME VERSION
 
-The game version need these files/folders:
+The game version needs these files/folders:
 
+* actual game content
+* configuration files
 * python executable
 * pygame libraries
 * framework code
 * start script or executable
+
+The actual game code files should be hidden from the player, so something like the following could be a good idea.
+
+    ${game}/
+        ./${game}_launcher.sh|.bat|...
+        ./LICENSE
+        ./bin/
+            ./python/
+            ./pgw/
+            ./project/
+            ./configfile
+            ./secondary start scripts
 
 ## WAY OF DEPLOYMENT
 
@@ -100,3 +120,4 @@ possible options:
 ### GAME VERSION
 
 * a `create-release-package.sh` or a `.bat` would be cool
+* the shipping should also be via some zip file
