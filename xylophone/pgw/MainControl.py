@@ -1,3 +1,4 @@
+# Copyright (c) 2018 Turysaz <turysaz@posteo.org>
 
 import pygame
 from .Room import Room

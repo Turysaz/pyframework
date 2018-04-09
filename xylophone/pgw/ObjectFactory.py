@@ -1,5 +1,6 @@
-from .UserfriendlyInjectionPackage import UserfriendlyInjectionPackage
+# Copyright (c) 2018 Turysaz <turysaz@posteo.org>
 
+from .UserfriendlyInjectionPackage import UserfriendlyInjectionPackage
 
 class ObjectFactory():
 

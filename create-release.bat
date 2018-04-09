@@ -1,3 +1,5 @@
+rem Copyright (c) 2018 Turysaz <turysaz@posteo.org>
+
 set drelease=release
 
 mkdir %drelease%

@@ -1,3 +1,4 @@
+# Copyright (c) 2018 Turysaz <turysaz@posteo.org>
 
 # source directories
 SRC_DIR		= thirdparty
